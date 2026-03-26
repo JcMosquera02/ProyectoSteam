@@ -121,3 +121,46 @@ ul {
     color: var(--acento);
     font-weight: 500;
 }
+
+/*--------------------------------------------*/
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 14px;
+    border-radius: var(--radio);
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+    background: none;
+}
+
+.btn--primario {
+    background: var(--acento);
+    color: #fff;
+    border-color: var(--acento);
+}
+
+.btn--primario:hover {
+    background: #1d4ed8;
+}
+
+.btn--contorno {
+    color: var(--texto);
+    border-color: var(--borde);
+}
+
+.btn--contorno:hover {
+    background: var(--fondo);
+}
+
+.btn--peligro {
+    color: var(--peligro);
+    border-color: #fca5a5;
+}
+
+.btn--peligro:hover {
+    background: #fef2f2;
+}
