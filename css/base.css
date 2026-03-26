@@ -82,3 +82,22 @@ ul {
     background: var(--texto);
     border-radius: 2px;
 }
+/*--------------------------------------------*/
+
+.nav__menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+    padding: 8px 16px 12px;
+    flex-direction: column;
+    gap: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.nav__menu.abierto {
+    display: flex;
+}
