@@ -198,3 +198,23 @@ ul {
     border: 1px solid var(--borde);
     color: var(--suave);
 }
+
+/*--------------------------------------------*/
+
+.vacio {
+    padding: 40px 16px;
+    text-align: center;
+    color: var(--suave);
+    font-size: 13px;
+}
+
+.vacio strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--texto);
+    font-size: 15px;
+}
+
+.vacio .btn {
+    margin-top: 12px;
+}
