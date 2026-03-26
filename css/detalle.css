@@ -1,0 +1,17 @@
+.migas {
+    font-size: 12px;
+    color: var(--suave);
+    margin-bottom: 14px;
+}
+
+.migas a {
+    color: var(--acento);
+}
+
+.migas a:hover {
+    text-decoration: underline;
+}
+
+.migas span {
+    margin: 0 4px;
+}
