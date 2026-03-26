@@ -42,3 +42,22 @@ ul {
 }
 
 /*---------------------------------*/
+
+.nav {
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav__logo {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--acento);
+}
