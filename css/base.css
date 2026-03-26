@@ -188,3 +188,13 @@ ul {
     border-color: var(--acento);
 }
 
+/*--------------------------------------------*/
+
+.etiqueta {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: var(--fondo);
+    border: 1px solid var(--borde);
+    color: var(--suave);
+}
