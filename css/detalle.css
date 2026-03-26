@@ -15,3 +15,14 @@
 .migas span {
     margin: 0 4px;
 }
+
+/*commit------2*/
+.detalle {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
