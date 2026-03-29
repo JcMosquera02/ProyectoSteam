@@ -27,4 +27,20 @@ const Estado = (() => {
     });
   };
 
+   /*---------------*/
+
+  const totalPaginas = () =>Math.ceil(obtenerFiltradas().length / _s.porPagina);
+
+  const itemsPagina = () => {
+    const filtradas = obtenerFiltradas();
+    const inicio = (_s.paginaActual - 1) * _s.porPagina;
+    return filtradas.slice(inicio, inicio + _s.porPagina);
+  };
+
+  return Object.freeze({
+    obtener, establecer, reiniciarPagina,
+    obtenerFiltradas, totalPaginas, itemsPagina
+  });
+  
 })();
+export default Estado;
