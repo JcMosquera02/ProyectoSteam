@@ -5,4 +5,8 @@ const Estado = (() => {
     porPagina: 20,
     categoriaActiva: 'all',
     textoBusqueda: ''
-  }})();
+  }
+  const obtener = () => ({ ..._s });
+  const establecer = (patch) => { _s = { ..._s, ...patch }; };
+
+})();
