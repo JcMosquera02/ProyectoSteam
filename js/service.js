@@ -13,3 +13,9 @@ const obtenerSeries = (pagina = 0) =>_obtener(`${BASE}/shows?page=${pagina}`);
 /*--------------*/
 
 const buscarSeries = (q) =>_obtener(`${BASE}/search/shows?q=${encodeURIComponent(q)}`);
+
+/*--------------*/
+
+const obtenerSeriePorId = (id) =>_obtener(`${BASE}/shows/${id}`);
+
+export default Object.freeze({obtenerSeries,buscarSeries,obtenerSeriePorId});
