@@ -31,3 +31,24 @@ const iniciar = async () => {
         return;
     }
     UI.mostrarEsqueletoDetalle(areaEl);
+
+    /*commit------4*/
+    try {
+        const serie = await Servicio.obtenerSeriePorId(id);
+        const esFav = Persistencia.esFavorito(serie.id);
+        UI.renderizarDetalle(serie, areaEl, migaNombre, esFav);
+
+        areaEl.addEventListener('click', e => {
+            const btn = e.target.closest('#btn-favorito');
+            if (!btn) return;
+            const { agregado } = Persistencia.alternarFavorito(serie);
+            btn.textContent = agregado ? '♥ En favoritos' : 'Agregar a favoritos';
+        });
+
+    } catch (err) {
+        console.error('[show-main]', err);
+        UI.renderizarErrorDetalle(areaEl);
+    }
+};
+
+iniciar();
