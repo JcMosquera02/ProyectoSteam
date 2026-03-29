@@ -138,3 +138,9 @@ const renderizarFavoritos = (favoritos, el) => {
       </li>`;
     }).join('');
 };
+
+/*commit------3*/
+const actualizarContadorFavoritos = (n, contadorEl, btnEliminar) => {
+    if (contadorEl) contadorEl.textContent = n;
+    if (btnEliminar) btnEliminar.hidden = n === 0;
+};
