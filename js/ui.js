@@ -161,3 +161,39 @@ const mostrarEsqueletoDetalle = (areaEl) => {
       </div>
     </div>`;
 };
+
+/*commit------5*/
+const renderizarDetalle = (serie, areaEl, migaNombreEl, esFav) => {
+    if (!areaEl) return;
+    const { id, name, image, genres = [], rating, summary,
+        language, status, premiered } = serie;
+    document.title = `${name} — ProyectoSteam`;
+    if (migaNombreEl) migaNombreEl.textContent = name;
+    const src = image?.original || image?.medium || '';
+    const posterHTML = src
+        ? `<img src="${_escapar(src)}" alt="${_escapar(name)}" />`
+        : `<div class="detalle__sin-imagen">Sin imagen</div>`;
+    const datosHTML = [
+        language && `<span><strong>Idioma:</strong> ${_escapar(language)}</span>`,
+        status && `<span><strong>Estado:</strong> ${_escapar(status)}</span>`,
+        premiered && `<span><strong>Estreno:</strong> ${_escapar(premiered)}</span>`,
+    ].filter(Boolean).join('');
+    const calif = rating?.average;
+    areaEl.innerHTML = `
+    <div class="detalle">
+      <div class="detalle__poster">${posterHTML}</div>
+      <div class="detalle__info">
+        <h1 class="detalle__titulo">${_escapar(name)}</h1>
+        <div class="detalle__generos">${_etiquetas(genres)}</div>
+        <div class="detalle__datos">${datosHTML}</div>
+        ${calif ? `<p class="detalle__calificacion">★ ${calif} / 10</p>` : ''}
+        <div class="detalle__resumen">${summary || '<p>Sin descripción.</p>'}</div>
+        <div class="detalle__acciones">
+          <button class="btn btn--primario" id="btn-favorito" data-id-serie="${id}">
+            ${esFav ? '♥ En favoritos' : 'Agregar a favoritos'}
+          </button>
+          <a href="../Paginas/index.html" class="btn btn--contorno">← Volver</a>
+        </div>
+      </div>
+    </div>`;
+};
