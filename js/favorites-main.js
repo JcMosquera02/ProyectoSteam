@@ -26,3 +26,32 @@ const iniciar = () => {
             botonMenu?.setAttribute('aria-expanded', 'false');
         }
     });
+
+    /*commit------6*/
+    let _orden = 'agregado';
+
+    const _ordenar = (favs) => {
+        const c = [...favs];
+        if (_orden === 'nombre')
+            return c.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+        if (_orden === 'calificacion')
+            return c.sort((a, b) =>
+                (b.rating?.average || 0) - (a.rating?.average || 0));
+        return c.sort((a, b) => (b._guardadoEn || 0) - (a._guardadoEn || 0));
+    };
+
+    const _renderizar = () => {
+        const todos = Persistencia.obtenerFavoritos();
+        const q = buscarEl?.value?.trim().toLowerCase() || '';
+        const visibles = _ordenar(todos)
+            .filter(f => !q || (f.name || '').toLowerCase().includes(q));
+
+        UI.actualizarContadorFavoritos(todos.length, contadorEl, btnEliminarTodo);
+        UI.mostrarVacio(listaVaciaEl, todos.length === 0);
+        UI.mostrarVacio(sinCoincidencias, todos.length > 0 && visibles.length === 0);
+        if (todos.length === 0 || visibles.length === 0) {
+            if (listaEl) listaEl.innerHTML = '';
+            return;
+        }
+        UI.renderizarFavoritos(visibles, listaEl);
+    };
