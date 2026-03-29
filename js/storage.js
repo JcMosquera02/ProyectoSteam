@@ -10,3 +10,10 @@ const leer = (k, d) => {
 const guardar = (k, v) => {
     try { localStorage.setItem(k, JSON.stringify(v)); } catch { }
 };
+
+/*----------------*/
+
+const obtenerFavoritos = () => leer(CLAVES.FAV, []);
+
+const esFavorito = (id) =>
+    obtenerFavoritos().some(f => f.id === id);
