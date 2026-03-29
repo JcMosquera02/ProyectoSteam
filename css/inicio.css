@@ -317,3 +317,17 @@
     font-size: 13px;
     padding: 0 2px;
 }
+
+/*-------------------*/
+
+.btn-pagina--nav {
+    font-size: 15px;
+    font-weight: 600;
+    min-width: 36px;
+    color: var(--suave);
+}
+
+.btn-pagina--nav:hover:not(:disabled) {
+    color: var(--acento);
+    border-color: var(--acento);
+}
