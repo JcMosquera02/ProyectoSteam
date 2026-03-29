@@ -144,3 +144,20 @@ const actualizarContadorFavoritos = (n, contadorEl, btnEliminar) => {
     if (contadorEl) contadorEl.textContent = n;
     if (btnEliminar) btnEliminar.hidden = n === 0;
 };
+
+/*commit------4*/
+const mostrarEsqueletoDetalle = (areaEl) => {
+    if (!areaEl) return;
+    areaEl.innerHTML = `
+    <div class="detalle-esqueleto">
+      <div class="esq-caja shimmer"
+           style="width:120px;aspect-ratio:2/3;flex-shrink:0"></div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+        <div class="esq-linea esq-linea--grande shimmer"></div>
+        <div class="esq-linea esq-linea--mediana shimmer"></div>
+        <div class="esq-linea shimmer"></div>
+        <div class="esq-linea shimmer"></div>
+        <div class="esq-linea esq-linea--pequena shimmer"></div>
+      </div>
+    </div>`;
+};
