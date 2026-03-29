@@ -23,3 +23,11 @@ const iniciar = async () => {
             botonMenu?.setAttribute('aria-expanded', 'false');
         }
     });
+
+    /*commit------3*/
+    const id = new URLSearchParams(window.location.search).get('id');
+    if (!id || isNaN(Number(id))) {
+        UI.renderizarErrorDetalle(areaEl);
+        return;
+    }
+    UI.mostrarEsqueletoDetalle(areaEl);
