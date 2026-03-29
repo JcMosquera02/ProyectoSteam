@@ -15,5 +15,14 @@ const guardar = (k, v) => {
 
 const obtenerFavoritos = () => leer(CLAVES.FAV, []);
 
-const esFavorito = (id) =>
-    obtenerFavoritos().some(f => f.id === id);
+const esFavorito = (id) =>obtenerFavoritos().some(f => f.id === id);
+
+/*----------------*/
+
+const agregarFavorito = (s) => {
+    if (!esFavorito(s.id))
+        guardar(CLAVES.FAV, [
+            ...obtenerFavoritos(),
+            { ...s, _guardadoEn: Date.now() }
+        ]);
+};
