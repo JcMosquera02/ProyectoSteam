@@ -101,9 +101,6 @@ ul {
 .nav__menu.abierto {
     display: flex;
 }
-
-/*--------------------------------------------*/
-
 .nav__enlace {
     display: block;
     padding: 10px 12px;
@@ -187,3 +184,136 @@ ul {
         padding: 20px 48px;
     }
 }
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 14px;
+    border-radius: var(--radio);
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+    background: none;
+}
+
+.btn--primario {
+    background: var(--acento);
+    color: #fff;
+    border-color: var(--acento);
+}
+
+.btn--primario:hover {
+    background: #1d4ed8;
+}
+
+.btn--contorno {
+    color: var(--texto);
+    border-color: var(--borde);
+}
+
+.btn--contorno:hover {
+    background: var(--fondo);
+}
+
+.btn--peligro {
+    color: var(--peligro);
+    border-color: #fca5a5;
+}
+
+.btn--peligro:hover {
+    background: #fef2f2;
+}
+
+/*--------------------------------------------*/
+
+.campo,
+.selector {
+    padding: 8px 10px;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    font-size: 14px;
+    font-family: inherit;
+    background: var(--blanco);
+    color: var(--texto);
+    outline: none;
+}
+
+.campo {
+    width: 100%;
+}
+
+.campo:focus,
+.selector:focus {
+    border-color: var(--acento);
+}
+
+/*--------------------------------------------*/
+
+.etiqueta {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: var(--fondo);
+    border: 1px solid var(--borde);
+    color: var(--suave);
+}
+
+/*--------------------------------------------*/
+
+.vacio {
+    padding: 40px 16px;
+    text-align: center;
+    color: var(--suave);
+    font-size: 13px;
+}
+
+.vacio strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--texto);
+    font-size: 15px;
+}
+
+.vacio .btn {
+    margin-top: 12px;
+}
+
+
+/*--------------------------------------------*/
+
+.shimmer {
+    background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+    from {
+        background-position: 200% 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
+
+
+/*--------------------------------------------*/
+
+.pie {
+    margin-top: 32px;
+    padding: 14px 16px;
+    border-top: 1px solid var(--borde);
+    text-align: center;
+    font-size: 12px;
+    color: var(--suave);
+}
+
+.pie a {
+    color: var(--acento);
+}
+
+/*--------------------------------------------*/
+
