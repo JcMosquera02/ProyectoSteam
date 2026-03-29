@@ -72,3 +72,9 @@ const renderizarHistorial = (historial, listaEl, contenedorEl) => {
       data-busqueda="${_escapar(q)}">${_escapar(q)}</button></li>`
     ).join('');
 };
+
+/*commit------6*/
+const mostrarVacio = (el, mostrar) => { if (el) el.hidden = !mostrar; };
+const actualizarContador = (n, el) => {
+    if (el) el.textContent = `${n} resultado${n !== 1 ? 's' : ''}`;
+};
