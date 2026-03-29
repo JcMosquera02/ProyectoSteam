@@ -51,3 +51,13 @@ const renderizarCuadricula = (series, areaEl, esFavoritoFn) => {
       </li>`;
     }).join('')}</ul>`;
 };
+
+/*commit------4*/
+const renderizarCategorias = (categorias, activa, selectEl) => {
+    if (!selectEl) return;
+    selectEl.innerHTML =
+        `<option value="all" ${activa === 'all' ? 'selected' : ''}>Todas</option>` +
+        categorias.map(c =>
+            `<option value="${_escapar(c)}" ${activa === c ? 'selected' : ''}>${_escapar(c)}</option>`
+        ).join('');
+};
