@@ -259,3 +259,14 @@
 .tarjeta-esqueleto__linea--corta {
     width: 55%;
 }
+
+/*-------------------*/
+
+.paginacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    padding: 8px 0;
+}
