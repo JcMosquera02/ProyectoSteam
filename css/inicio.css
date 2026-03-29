@@ -270,3 +270,37 @@
     flex-wrap: wrap;
     padding: 8px 0;
 }
+
+/*-------------------*/
+
+.btn-pagina {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border-radius: var(--radio);
+    font-size: 13px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    color: var(--texto);
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-pagina:hover:not(:disabled) {
+    border-color: var(--acento);
+    color: var(--acento);
+}
+
+.btn-pagina.activo {
+    background: var(--acento);
+    border-color: var(--acento);
+    color: #fff;
+}
+
+.btn-pagina:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
