@@ -52,3 +52,12 @@ const agregarAlHistorial = (q) => {
 const guardarPorPagina = (n) => guardar(CLAVES.PP, n);
 
 const obtenerPorPagina = (d = 10) => leer(CLAVES.PP, d);
+
+/*----------------*/
+
+export default Object.freeze({
+  obtenerFavoritos, esFavorito, agregarFavorito,
+  eliminarFavorito, limpiarFavoritos,
+  obtenerHistorial, agregarAlHistorial,
+  guardarPorPagina, obtenerPorPagina,
+});
