@@ -35,3 +35,22 @@ const iniciar = () => {
             botonMenu?.setAttribute('aria-expanded', 'false');
         }
     });
+
+    /*commit------3*/
+    const _renderizar = () => {
+        const items = Estado.itemsPagina();
+        const filtradas = Estado.obtenerFiltradas();
+        const { paginaActual, categoriaActiva, series } = Estado.obtener();
+        const categorias = [...new Set(
+            series.flatMap(s => s.genres || [])
+        )].sort();
+
+        UI.renderizarCuadricula(items, areaEl, Persistencia.esFavorito);
+        UI.mostrarVacio(sinResultados, items.length === 0);
+        UI.actualizarContador(filtradas.length, contadorEl);
+        UI.renderizarPaginacion(
+            paginaActual, Estado.totalPaginas(),
+            numerosEl, btnPrimera, btnAnterior, btnSiguiente, btnUltima
+        );
+        UI.renderizarCategorias(categorias, categoriaActiva, categoriaEl);
+    };
