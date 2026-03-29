@@ -18,4 +18,7 @@ const buscarSeries = (q) =>_obtener(`${BASE}/search/shows?q=${encodeURIComponent
 
 const obtenerSeriePorId = (id) =>_obtener(`${BASE}/shows/${id}`);
 
-export default Object.freeze({obtenerSeries,buscarSeries,obtenerSeriePorId});
+export default Object.freeze({
+  obtenerSeries,
+  buscarSeries,
+  obtenerSeriePorId});
