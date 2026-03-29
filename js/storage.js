@@ -46,3 +46,9 @@ const agregarAlHistorial = (q) => {
             .filter(h => h.toLowerCase() !== t.toLowerCase())
     ].slice(0, 8));
 };
+
+/*----------------*/
+
+const guardarPorPagina = (n) => guardar(CLAVES.PP, n);
+
+const obtenerPorPagina = (d = 10) => leer(CLAVES.PP, d);
