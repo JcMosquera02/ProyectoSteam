@@ -304,3 +304,16 @@
     opacity: 0.35;
     cursor: not-allowed;
 }
+
+/*-------------------*/
+
+.pagina-puntos {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 32px;
+    color: var(--suave);
+    font-size: 13px;
+    padding: 0 2px;
+}
