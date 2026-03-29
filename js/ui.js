@@ -113,3 +113,28 @@ const renderizarPaginacion = (
     }
     contenedorEl.innerHTML = items.join('');
 };
+
+/*commit------2*/
+const renderizarFavoritos = (favoritos, el) => {
+    if (!el) return;
+    el.innerHTML = favoritos.map(s => {
+        const img = s.image?.medium || s.image?.original || '';
+        return `
+      <li class="item-favorito">
+        <div class="item-favorito__miniatura">
+          ${img
+                ? `<img src="${_escapar(img)}" alt="" loading="lazy" />`
+                : `<div class="item-favorito__sin-imagen">?</div>`}
+        </div>
+        <div class="item-favorito__info">
+          <p class="item-favorito__titulo">${_escapar(s.name || 'Sin título')}</p>
+          <div class="item-favorito__generos">${_etiquetas(s.genres)}</div>
+          <div class="item-favorito__acciones">
+            <a href="../Paginas/show.html?id=${s.id}" class="btn btn--primario">Ver detalles</a>
+            <button class="btn btn--peligro"
+              data-id-eliminar="${s.id}">Eliminar</button>
+          </div>
+        </div>
+      </li>`;
+    }).join('');
+};
