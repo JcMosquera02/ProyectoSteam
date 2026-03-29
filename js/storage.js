@@ -26,3 +26,9 @@ const agregarFavorito = (s) => {
             { ...s, _guardadoEn: Date.now() }
         ]);
 };
+
+/*----------------*/
+
+const eliminarFavorito = (id) => guardar(CLAVES.FAV, obtenerFavoritos().filter(f => f.id !== id));
+
+const limpiarFavoritos = () => guardar(CLAVES.FAV, []);
