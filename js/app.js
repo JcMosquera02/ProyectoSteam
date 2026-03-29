@@ -92,3 +92,18 @@ const iniciar = () => {
         Estado.reiniciarPagina();
         _renderizar();
     });
+
+    /*commit------6*/
+    categoriaEl?.addEventListener('change', () => {
+        Estado.establecer({ categoriaActiva: categoriaEl.value });
+        Estado.reiniciarPagina();
+        _renderizar();
+    });
+
+    porPaginaEl?.addEventListener('change', () => {
+        const n = parseInt(porPaginaEl.value);
+        Estado.establecer({ porPagina: n });
+        Estado.reiniciarPagina();
+        Persistencia.guardarPorPagina(n);
+        _renderizar();
+    });
