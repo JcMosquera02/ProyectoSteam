@@ -14,3 +14,17 @@ const registrarBusqueda = (q) => {
     Almacenamiento.agregarAlHistorial(q);
     return Almacenamiento.obtenerHistorial();
 };
+
+/* -----------------*/
+
+export default Object.freeze({
+    alternarFavorito,
+    registrarBusqueda,
+    obtenerFavoritos: Almacenamiento.obtenerFavoritos,
+    esFavorito: Almacenamiento.esFavorito,
+    eliminarFavorito: Almacenamiento.eliminarFavorito,
+    limpiarFavoritos: Almacenamiento.limpiarFavoritos,
+    obtenerHistorial: Almacenamiento.obtenerHistorial,
+    guardarPorPagina: Almacenamiento.guardarPorPagina,
+    obtenerPorPagina: Almacenamiento.obtenerPorPagina,
+});
