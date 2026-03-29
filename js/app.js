@@ -54,3 +54,18 @@ const iniciar = () => {
         );
         UI.renderizarCategorias(categorias, categoriaActiva, categoriaEl);
     };
+
+    /*commit------4*/
+    const _cargar = async () => {
+        UI.mostrarEsqueleto(areaEl, 8);
+        try {
+            const series = await Servicio.obtenerSeries(0);
+            Estado.establecer({ series, textoBusqueda: '', categoriaActiva: 'all' });
+            Estado.reiniciarPagina();
+            _renderizar();
+        } catch (err) {
+            console.error('[app]', err);
+            areaEl.innerHTML = '';
+            UI.mostrarVacio(sinResultados, true);
+        }
+    };
