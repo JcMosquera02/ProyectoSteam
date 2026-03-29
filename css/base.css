@@ -101,3 +101,25 @@ ul {
 .nav__menu.abierto {
     display: flex;
 }
+
+/*--------------------------------------------*/
+
+.nav__enlace {
+    display: block;
+    padding: 10px 12px;
+    border-radius: var(--radio);
+    font-size: 14px;
+    color: var(--suave);
+    cursor: pointer;
+    width: 100%;
+}
+
+.nav__enlace:hover {
+    color: var(--texto);
+    background: var(--fondo);
+}
+
+.nav__enlace.activo {
+    color: var(--acento);
+    font-weight: 500;
+}
