@@ -61,3 +61,14 @@ const renderizarCategorias = (categorias, activa, selectEl) => {
             `<option value="${_escapar(c)}" ${activa === c ? 'selected' : ''}>${_escapar(c)}</option>`
         ).join('');
 };
+
+/*commit------5*/
+const renderizarHistorial = (historial, listaEl, contenedorEl) => {
+    if (!listaEl || !contenedorEl) return;
+    if (!historial.length) { contenedorEl.hidden = true; return; }
+    contenedorEl.hidden = false;
+    listaEl.innerHTML = historial.map(q =>
+        `<li><button class="historial__etiqueta"
+      data-busqueda="${_escapar(q)}">${_escapar(q)}</button></li>`
+    ).join('');
+};
