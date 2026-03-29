@@ -1,0 +1,31 @@
+.barra-busqueda {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.barra-busqueda__fila-superior {
+  display: flex;
+  gap: 8px;
+}
+.barra-busqueda__fila-superior .campo { flex: 1; }
+.barra-busqueda__fila-inferior {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.barra-busqueda__fila-inferior label {
+  font-size: 12px;
+  color: var(--suave);
+  white-space: nowrap;
+}
+.barra-busqueda__fila-inferior .selector {
+  flex: 1;
+  min-width: 120px;
+  max-width: 220px;
+}
