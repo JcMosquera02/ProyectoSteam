@@ -126,3 +126,81 @@
         grid-template-columns: repeat(5, 1fr);
     }
 }
+
+/*-------------------*/
+
+.tarjeta {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta__imagen {
+    aspect-ratio: 2/3;
+    background: #f3f4f6;
+    overflow: hidden;
+}
+
+.tarjeta__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tarjeta__sin-imagen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+.tarjeta__cuerpo {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.tarjeta__titulo {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tarjeta__generos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.tarjeta__calificacion {
+    font-size: 11px;
+    color: #b45309;
+    font-weight: 500;
+}
+
+.tarjeta__acciones {
+    display: flex;
+    gap: 4px;
+    margin-top: auto;
+    padding-top: 6px;
+}
+
+.tarjeta__acciones .btn {
+    flex: 1;
+    justify-content: center;
+    padding: 5px 4px;
+    font-size: 11px;
+}
