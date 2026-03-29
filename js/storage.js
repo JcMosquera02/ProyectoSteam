@@ -32,3 +32,17 @@ const agregarFavorito = (s) => {
 const eliminarFavorito = (id) => guardar(CLAVES.FAV, obtenerFavoritos().filter(f => f.id !== id));
 
 const limpiarFavoritos = () => guardar(CLAVES.FAV, []);
+
+/*----------------*/
+
+const obtenerHistorial = () => leer(CLAVES.HIST, []);
+
+const agregarAlHistorial = (q) => {
+    const t = q.trim();
+    if (!t) return;
+    guardar(CLAVES.HIST, [
+        t,
+        ...obtenerHistorial()
+            .filter(h => h.toLowerCase() !== t.toLowerCase())
+    ].slice(0, 8));
+};
