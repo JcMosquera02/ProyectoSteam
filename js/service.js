@@ -9,3 +9,7 @@ const _obtener = async (url) => {
 /*--------------*/
 
 const obtenerSeries = (pagina = 0) =>_obtener(`${BASE}/shows?page=${pagina}`);
+
+/*--------------*/
+
+const buscarSeries = (q) =>_obtener(`${BASE}/search/shows?q=${encodeURIComponent(q)}`);
