@@ -11,3 +11,15 @@ const iniciar = async () => {
     const migaNombre = $('miga-nombre');
     const botonMenu = $('boton-menu');
     const menuNav = $('menu-nav');
+
+    /*commit------2*/
+    botonMenu?.addEventListener('click', () => {
+        const abierto = menuNav.classList.toggle('abierto');
+        botonMenu.setAttribute('aria-expanded', abierto);
+    });
+    document.addEventListener('click', e => {
+        if (!botonMenu?.contains(e.target) && !menuNav?.contains(e.target)) {
+            menuNav?.classList.remove('abierto');
+            botonMenu?.setAttribute('aria-expanded', 'false');
+        }
+    });
