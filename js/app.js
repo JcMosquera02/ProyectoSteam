@@ -144,3 +144,37 @@ const iniciar = () => {
         _renderizar();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    /*commit------8*/
+    areaEl?.addEventListener('click', e => {
+        const btn = e.target.closest('[data-id-fav]');
+        if (!btn) return;
+        e.preventDefault();
+        const id = parseInt(btn.dataset.idFav);
+        const serie = Estado.obtener().series.find(s => s.id === id);
+        if (!serie) return;
+        const { agregado } = Persistencia.alternarFavorito(serie);
+        btn.setAttribute('aria-pressed', agregado);
+        btn.textContent = agregado ? '♥' : '♡';
+    });
+
+    histLista?.addEventListener('click', e => {
+        const btn = e.target.closest('[data-busqueda]');
+        if (!btn) return;
+        campoBusq.value = btn.dataset.busqueda;
+        btnLimpiar.hidden = false;
+        Estado.establecer({ textoBusqueda: btn.dataset.busqueda });
+        Estado.reiniciarPagina();
+        _renderizar();
+    });
+
+    const porPagina = Persistencia.obtenerPorPagina(10);
+    Estado.establecer({ porPagina });
+    if (porPaginaEl) porPaginaEl.value = String(porPagina);
+    UI.renderizarHistorial(
+        Persistencia.obtenerHistorial(), histLista, histContenedor
+    );
+    _cargar();
+};
+
+export default Object.freeze({ iniciar });
