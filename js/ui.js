@@ -197,3 +197,22 @@ const renderizarDetalle = (serie, areaEl, migaNombreEl, esFav) => {
       </div>
     </div>`;
 };
+
+/*commit------6*/
+const renderizarErrorDetalle = (areaEl) => {
+    if (!areaEl) return;
+    areaEl.innerHTML = `
+    <div class="vacio">
+      <strong>Serie no encontrada</strong>
+      No se pudo cargar la información.
+      <a href="../Paginas/index.html" class="btn btn--contorno">← Volver al inicio</a>
+    </div>`;
+};
+
+export default Object.freeze({
+    mostrarEsqueleto, renderizarCuadricula, renderizarPaginacion,
+    renderizarCategorias, renderizarHistorial,
+    mostrarVacio, actualizarContador,
+    renderizarFavoritos, actualizarContadorFavoritos,
+    mostrarEsqueletoDetalle, renderizarDetalle, renderizarErrorDetalle,
+});
