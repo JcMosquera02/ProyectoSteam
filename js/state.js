@@ -9,4 +9,6 @@ const Estado = (() => {
   const obtener = () => ({ ..._s });
   const establecer = (patch) => { _s = { ..._s, ...patch }; };
 
+  const reiniciarPagina = () => { _s = { ..._s, paginaActual: 1 }; };
+
 })();
