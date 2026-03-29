@@ -5,3 +5,7 @@ const _obtener = async (url) => {
   if (!res.ok) throw new Error(`Error API: ${res.status}`);
   return res.json();
 };
+
+/*--------------*/
+
+const obtenerSeries = (pagina = 0) =>_obtener(`${BASE}/shows?page=${pagina}`);
