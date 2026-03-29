@@ -107,3 +107,40 @@ const iniciar = () => {
         Persistencia.guardarPorPagina(n);
         _renderizar();
     });
+
+    /*commit------7*/
+    btnAnterior?.addEventListener('click', () => {
+        const { paginaActual } = Estado.obtener();
+        if (paginaActual <= 1) return;
+        Estado.establecer({ paginaActual: paginaActual - 1 });
+        _renderizar();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    btnSiguiente?.addEventListener('click', () => {
+        const { paginaActual } = Estado.obtener();
+        if (paginaActual >= Estado.totalPaginas()) return;
+        Estado.establecer({ paginaActual: paginaActual + 1 });
+        _renderizar();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    btnPrimera?.addEventListener('click', () => {
+        Estado.establecer({ paginaActual: 1 });
+        _renderizar();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    btnUltima?.addEventListener('click', () => {
+        Estado.establecer({ paginaActual: Estado.totalPaginas() });
+        _renderizar();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    numerosEl?.addEventListener('click', e => {
+        const btn = e.target.closest('[data-pagina]');
+        if (!btn) return;
+        Estado.establecer({ paginaActual: parseInt(btn.dataset.pagina) });
+        _renderizar();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
