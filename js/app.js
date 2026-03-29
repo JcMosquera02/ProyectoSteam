@@ -69,3 +69,26 @@ const iniciar = () => {
             UI.mostrarVacio(sinResultados, true);
         }
     };
+
+    /*commit------5*/
+    campoBusq?.addEventListener('input', () => {
+        const q = campoBusq.value;
+        btnLimpiar.hidden = !q;
+        Estado.establecer({ textoBusqueda: q });
+        Estado.reiniciarPagina();
+        if (q.trim().length >= 2) {
+            Persistencia.registrarBusqueda(q.trim());
+            UI.renderizarHistorial(
+                Persistencia.obtenerHistorial(), histLista, histContenedor
+            );
+        }
+        _renderizar();
+    });
+
+    btnLimpiar?.addEventListener('click', () => {
+        campoBusq.value = '';
+        btnLimpiar.hidden = true;
+        Estado.establecer({ textoBusqueda: '' });
+        Estado.reiniciarPagina();
+        _renderizar();
+    });
