@@ -204,3 +204,58 @@
     padding: 5px 4px;
     font-size: 11px;
 }
+
+/*-------------------*/
+
+.cuadricula-esqueleto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 600px) {
+    .cuadricula-esqueleto {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (min-width: 900px) {
+    .cuadricula-esqueleto {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .cuadricula-esqueleto {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.tarjeta-esqueleto {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    overflow: hidden;
+}
+
+.tarjeta-esqueleto__imagen {
+    aspect-ratio: 2/3;
+}
+
+.tarjeta-esqueleto__cuerpo {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tarjeta-esqueleto__linea {
+    height: 11px;
+    border-radius: 4px;
+}
+
+.tarjeta-esqueleto__linea--corta {
+    width: 55%;
+}
