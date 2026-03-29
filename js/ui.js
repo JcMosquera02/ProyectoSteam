@@ -78,3 +78,38 @@ const mostrarVacio = (el, mostrar) => { if (el) el.hidden = !mostrar; };
 const actualizarContador = (n, el) => {
     if (el) el.textContent = `${n} resultado${n !== 1 ? 's' : ''}`;
 };
+
+/*commit------1*/
+const renderizarPaginacion = (
+    actual, total, contenedorEl,
+    btnPrimera, btnAnterior, btnSiguiente, btnUltima
+) => {
+    if (!contenedorEl) return;
+    btnPrimera.disabled = actual <= 1;
+    btnAnterior.disabled = actual <= 1;
+    btnSiguiente.disabled = actual >= total;
+    btnUltima.disabled = actual >= total;
+    if (total <= 1) { contenedorEl.innerHTML = ''; return; }
+
+    const VENTANA = 5;
+    let inicio = Math.max(1, actual - Math.floor(VENTANA / 2));
+    let fin = inicio + VENTANA - 1;
+    if (fin > total) { fin = total; inicio = Math.max(1, fin - VENTANA + 1); }
+
+    const items = [];
+    if (inicio > 1) {
+        items.push(`<button class="btn-pagina" data-pagina="1">1</button>`);
+        if (inicio > 2) items.push(`<span class="pagina-puntos">…</span>`);
+    }
+    for (let n = inicio; n <= fin; n++) {
+        const activo = n === actual;
+        items.push(`<button class="btn-pagina ${activo ? 'activo' : ''}"
+      data-pagina="${n}" ${activo ? 'disabled' : ''}
+      aria-current="${activo ? 'page' : 'false'}">${n}</button>`);
+    }
+    if (fin < total) {
+        if (fin < total - 1) items.push(`<span class="pagina-puntos">…</span>`);
+        items.push(`<button class="btn-pagina" data-pagina="${total}">${total}</button>`);
+    }
+    contenedorEl.innerHTML = items.join('');
+};
