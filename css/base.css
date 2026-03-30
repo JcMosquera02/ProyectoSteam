@@ -18,6 +18,29 @@
     --peligro: #dc2626;
     --radio: 6px;
 }
+[data-tema="oscuro"] {
+    --fondo: #111827;
+    --blanco: #1f2937;
+    --borde: #374151;
+    --texto: #f9fafb;
+    --suave: #9ca3af;
+    --acento: #3b82f6;
+    --peligro: #ef4444;
+}
+
+.btn-tema {
+    background: none;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    cursor: pointer;
+    font-size: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--texto);
+}
 
 body {
     font-family: 'Inter', sans-serif;
