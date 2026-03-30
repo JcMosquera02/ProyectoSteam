@@ -5,14 +5,17 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/main.css'>
+    <script src='../js/main.js'></script>
+    <script type="module" src="../js/theme-main.js"></script>
 </head>
 <body>
     <nav class="nav">
         <a href="index.html" class="nav__logo">ProyectoSteam</a>
         <div style="display:flex;align-items:center;gap:8px;">
-            <button class="btn-tema" id="btn-tema" title="Modo oscuro/claro">🌙</button>
+            <button id="btn-tema" class="btn-tema">
+                🌙
+            </button>
             <button class="nav__boton-menu" id="boton-menu" aria-label="Abrir menú" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>

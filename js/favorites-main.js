@@ -2,6 +2,8 @@
 /** favorites-main.js — lógica de favorites.html */
 import Persistencia from './persistance.js';
 import UI from './ui.js';
+import { iniciarTema } from './tema.js';
+iniciarTema();
 
 const $ = id => document.getElementById(id);
 
