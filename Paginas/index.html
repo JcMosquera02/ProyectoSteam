@@ -23,6 +23,21 @@
         <li><a href="favorites.html" class="nav__enlace">Favoritos</a></li>
     </ul>
     ´--------------´
+    <div class="barra-busqueda">
+        <div class="barra-busqueda__fila-superior">
+            <input type="search" id="campo-busqueda" class="campo" placeholder="Buscar serie o película…"
+                autocomplete="off" />
+            <button id="btn-limpiar" class="btn btn--contorno" hidden>Limpiar</button>
+        </div>
+        <div class="barra-busqueda__fila-inferior">
+            <label for="selector-categoria">Categoría:</label>
+            <select id="selector-categoria" class="selector">
+                <option value="all">Todas</option>
+            </select>
+        </div>
+    </div>
+
+    ´--------------´
     <div id="historial-contenedor" hidden>
         <div class="historial">
             <p class="historial__titulo">Búsquedas recientes</p>
