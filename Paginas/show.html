@@ -3,22 +3,20 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Detalle — ProyectoSteam</title>
+    <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="/css/base.css" />
-    <link rel="stylesheet" href="/css/detalle.css" />
-    <script type='module' src='/js/show-main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
 </head>
 <body>
     <nav class="nav">
         <a href="index.html" class="nav__logo">ProyectoSteam</a>
-        <button class="nav__boton-menu" id="boton-menu" aria-label="Abrir menú" aria-expanded="false">
-            <span></span><span></span><span></span>
-        </button>
-        <ul class="nav__menu" id="menu-nav" role="menu">
-            <li><a href="index.html" class="nav__enlace">Inicio</a></li>
-            <li><a href="favorites.html" class="nav__enlace">Favoritos</a></li>
-        </ul>
+        <div style="display:flex;align-items:center;gap:8px;">
+            <button class="btn-tema" id="btn-tema" title="Modo oscuro/claro">🌙</button>
+            <button class="nav__boton-menu" id="boton-menu" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
     
     ´------------------´
@@ -36,5 +34,9 @@
         Datos de <a href="https://www.tvmaze.com" target="_blank" rel="noopener">TVMaze API</a>
     </footer>
     ´´
+    <ul class="nav__menu" id="menu-nav" role="menu">
+        <li><a href="index.html" class="nav__enlace activo">Inicio</a></li>
+        <li><a href="favorites.html" class="nav__enlace">Favoritos</a></li>
+    </ul>
 </body>
 </html>

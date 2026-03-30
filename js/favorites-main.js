@@ -55,3 +55,32 @@ const iniciar = () => {
         }
         UI.renderizarFavoritos(visibles, listaEl);
     };
+
+    /*commit------7*/
+    listaEl?.addEventListener('click', e => {
+        const btn = e.target.closest('[data-id-eliminar]');
+        if (!btn) return;
+        Persistencia.eliminarFavorito(parseInt(btn.dataset.idEliminar));
+        _renderizar();
+    });
+/*----- */
+    btnEliminarTodo?.addEventListener('click', () => {
+        if (!confirm('¿Eliminar todos los favoritos?')) return;
+        Persistencia.limpiarFavoritos();
+        _renderizar();
+    });
+
+    buscarEl?.addEventListener('input', _renderizar);
+
+    botonesOrden?.forEach(btn => {
+        btn.addEventListener('click', () => {
+            _orden = btn.dataset.orden;
+            botonesOrden.forEach(b => b.classList.toggle('activo', b === btn));
+            _renderizar();
+        });
+    });
+    /*-----*/
+    _renderizar();
+};
+
+iniciar();
