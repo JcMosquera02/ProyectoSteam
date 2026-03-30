@@ -63,7 +63,7 @@ const iniciar = () => {
         Persistencia.eliminarFavorito(parseInt(btn.dataset.idEliminar));
         _renderizar();
     });
-
+/*----- */
     btnEliminarTodo?.addEventListener('click', () => {
         if (!confirm('¿Eliminar todos los favoritos?')) return;
         Persistencia.limpiarFavoritos();
@@ -79,7 +79,7 @@ const iniciar = () => {
             _renderizar();
         });
     });
-
+    /*-----*/
     _renderizar();
 };
 
