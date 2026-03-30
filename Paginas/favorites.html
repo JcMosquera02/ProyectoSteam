@@ -6,6 +6,7 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/base.css'>
+    <link rel="stylesheet" href="../css/favorites.css"/>
     <script src='../js/main.js'></script>
     <script type="module" src="../js/theme-main.js"></script>
 </head>
@@ -28,6 +29,18 @@
             Eliminar todos
         </button>
     </div>
+
+    <div class="barra-favoritos">
+        <input type="search" id="buscar-favoritos" class="campo" placeholder="Buscar en favoritos…"
+            style="max-width:280px" />
+        <div class="barra-favoritos__ordenar">
+            Ordenar:
+            <button class="btn-orden activo" data-orden="agregado">Recientes</button>
+            <button class="btn-orden" data-orden="nombre">Nombre</button>
+            <button class="btn-orden" data-orden="calificacion">Calificación</button>
+        </div>
+    </div>
+
     <ul class="nav__menu" id="menu-nav" role="menu">
         <li><a href="index.html" class="nav__enlace activo">Inicio</a></li>
         <li><a href="favorites.html" class="nav__enlace">Favoritos</a></li>
