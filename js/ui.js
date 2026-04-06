@@ -43,7 +43,7 @@ const renderizarCuadricula = (series, areaEl, esFavoritoFn) => {
           <div class="tarjeta__generos">${_etiquetas(s.genres)}</div>
           ${calif ? `<p class="tarjeta__calificacion">★ ${calif}</p>` : ''}
           <div class="tarjeta__acciones">
-            <a href="../Paginas/show.html?id=${s.id}" class="btn btn--primario">Ver</a>
+            <a href="./show.html?id=${s.id}" class="btn btn--primario">Ver</a>
             <button class="btn btn--contorno" data-id-fav="${s.id}"
               aria-pressed="${esFav}">${esFav ? '♥' : '♡'}</button>
           </div>
@@ -130,7 +130,7 @@ const renderizarFavoritos = (favoritos, el) => {
           <p class="item-favorito__titulo">${_escapar(s.name || 'Sin título')}</p>
           <div class="item-favorito__generos">${_etiquetas(s.genres)}</div>
           <div class="item-favorito__acciones">
-            <a href="../Paginas/show.html?id=${s.id}" class="btn btn--primario">Ver detalles</a>
+            <a href="./show.html?id=${s.id}" class="btn btn--primario">Ver detalles</a>
             <button class="btn btn--peligro"
               data-id-eliminar="${s.id}">Eliminar</button>
           </div>
@@ -192,7 +192,7 @@ const renderizarDetalle = (serie, areaEl, migaNombreEl, esFav) => {
           <button class="btn btn--primario" id="btn-favorito" data-id-serie="${id}">
             ${esFav ? '♥ En favoritos' : 'Agregar a favoritos'}
           </button>
-          <a href="../Paginas/index.html" class="btn btn--contorno">← Volver</a>
+          <a href="./index.html" class="btn btn--contorno">← Volver</a>
         </div>
       </div>
     </div>`;
@@ -205,7 +205,7 @@ const renderizarErrorDetalle = (areaEl) => {
     <div class="vacio">
       <strong>Serie no encontrada</strong>
       No se pudo cargar la información.
-      <a href="../Paginas/index.html" class="btn btn--contorno">← Volver al inicio</a>
+      <a href="./index.html" class="btn btn--contorno">← Volver al inicio</a>
     </div>`;
 };
 
